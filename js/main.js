@@ -1,4 +1,4 @@
-var app = angular.module("MyApp", []);
+ var app = angular.module("MyApp", []);
 app.controller("AlumnosController", function($scope){
 	$scope.alumnos = [
 		{nombre: "Christian Venegas", telefono: "12345678", curso:"Programación I"},
@@ -9,11 +9,13 @@ app.controller("AlumnosController", function($scope){
 	$scope.Save = function (){
 		$scope.alumnos.push({nombre:$scope.nuevoAlumno.nombre, telefono:$scope.nuevoAlumno.telefono, curso:$scope.nuevoAlumno.curso})
 		$scope.formVisibility = false;
-		console.log($scope.formVisibility);
+		$scope.nuevoAlumno.nombre = '';
+		$scope.nuevoAlumno.telefono = '';
+		$scope.nuevoAlumno.curso = '';
 	}
 
 	$scope.ShowForm = function(){
 		$scope.formVisibility = true;
-		console.log($scope.formVisibility);
+		
 	}
 });
